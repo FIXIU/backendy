@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cwiczenie 2.2</title>
+  </head>
+  <body>
+    <h2>lista zakupów:</h2>
+    <form id="purchaseForm">
+      <label><input type="checkbox" value="dwa bułki" /> dwa bułki</label><br />
+      <label><input type="checkbox" value="chleb" /> chleb</label><br />
+      <label><input type="checkbox" value="kiełbasa" /> kiełbasa</label
+      ><br /><br />
+      <button type="button" onclick="displaySelectedProducts()">
+        wyświetl zaznaczone produkty
+      </button>
+    </form>
+
+    <h2>wybrane produkty:</h2>
+    <ul id="shoppingList"></ul>
+
+    <script>
+      function displaySelectedProducts() {
+        let checkboxes = document.querySelectorAll(
+          "#purchaseForm input[type='checkbox']",
+        );
+        let shoppingList = document.getElementById("shoppingList");
+
+        shoppingList.innerHTML = "";
+
+        for (let item of checkboxes) {
+          if (item.checked) {
+            shoppingList.innerHTML += "<li>" + item.value + "</li>";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

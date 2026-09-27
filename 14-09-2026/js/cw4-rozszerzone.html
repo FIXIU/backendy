@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cwiczenie 4.2</title>
+  </head>
+  <body>
+    <label for="nameInput">imie: </label>
+    <input type="text" id="nameInput" /><br /><br />
+
+    <label for="ageInput">wiek: </label>
+    <input type="number" id="ageInput" /><br /><br />
+
+    <button onclick="displayData()">Pokaż dane</button>
+
+    <script>
+      function displayData() {
+        let name = document.getElementById("nameInput").value;
+        let age = document.getElementById("ageInput").value;
+
+        alert("imie: " + name + "\nwiek: " + age);
+      }
+    </script>
+  </body>
+</html>
